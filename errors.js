@@ -14,4 +14,12 @@ class ExistentResourceError extends Error {
   }
 }
 
-module.exports = { NotFoundError, ExistentResourceError };
+class ContentError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ContentError";
+    this.statusCode = 400;
+  }
+}
+
+module.exports = { NotFoundError, ExistentResourceError, ContentError };
